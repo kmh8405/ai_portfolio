@@ -33,7 +33,8 @@ import {
   Wrench,
   AlertCircle,
   Send,
-  X
+  X,
+  MapPin
 } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 
@@ -1030,6 +1031,17 @@ export default function App() {
                 </div>
 
                 <div className="space-y-6">
+                  {/* Location Section */}
+                  <div className="p-6 bg-slate-50 dark:bg-slate-800/50 rounded-3xl border border-slate-100 dark:border-slate-700/50">
+                    <div className="flex items-center gap-3">
+                      <MapPin className="w-5 h-5 text-emerald-500 shrink-0" />
+                      <div>
+                        <span className="text-[10px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-widest block mb-1">Location</span>
+                        <span className="text-lg font-black text-slate-900 dark:text-white tracking-tight">세종시 · 전국 근무 가능</span>
+                      </div>
+                    </div>
+                  </div>
+
                   {/* Email Section */}
                   <div className="p-6 bg-slate-50 dark:bg-slate-800/50 rounded-3xl border border-slate-100 dark:border-slate-700/50 group transition-all">
                     <div className="flex flex-col md:flex-row justify-between items-center gap-4">
