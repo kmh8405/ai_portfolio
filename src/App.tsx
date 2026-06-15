@@ -231,26 +231,26 @@ const EDUCATION: Education[] = [
     title: "AI 헬스케어 초격차 캠프 (수료 예정)",
     period: "2025.12 - 2026.06",
     institution: "오즈코딩스쿨",
-    description: "생체 신호 및 의료 이미지를 처리하기 위한 특화 딥러닝 모델링 및 실무용 MLOps 파이프라인 구축 과정을 이수하고 있습니다.",
+    description: "딥러닝 모델링, MLOps 파이프라인, 풀스택 개발을 이수하고 있습니다. 데이스쿨 스터디(주 3회)를 병행하며 수업 외 학습 루틴을 꾸준히 유지하고 있습니다.",
   },
   {
     title: "Javascript 기반 풀스택 양성 과정 (모범상 수상)",
     period: "2025.02 - 2025.07",
     institution: "KOSTA (한국소프트웨어산업협회)",
-    description: "데이터의 흐름을 효율적으로 다룰 수 있도록 백엔드 아키텍처와 웹 서버 지식을 습득하고 우수한 주도성으로 모범상을 수상했습니다.",
+    description: "백엔드 아키텍처와 웹 서버 지식을 습득하고 모범상을 수상했습니다. 과정 중 Node.js 스터디(주 1회, 5주)에 참여하며 팀원들과 학습 내용을 공유했습니다.",
   },
   {
     title: "Molecular & Cell Biology 학사",
     period: "2017.08 - 2024.08",
     institution: "University of California, Merced",
-    description: "분자생물학 및 기초 통계를 체계적으로 이수하며, 복잡한 생명 과학 데이터를 과학적 논리로 접근하는 법을 배웠습니다.",
+    description: "분자생물학 및 기초 통계를 체계적으로 이수하며, 복잡한 생명 과학 데이터를 과학적 논리로 접근하는 사고방식을 길렀습니다.",
   }
 ];
 
 const CERTIFICATIONS = {
   current: [
-    { title: "ADsP (데이터분석 준전문가)", date: "2023.11", issuer: "한국데이터산업진흥원" },
-    { title: "SQLD (SQL 개발자)", date: "2023.09", issuer: "한국데이터산업진흥원" },
+    { title: "ADsP (데이터분석 준전문가)", date: "2026.03", issuer: "한국데이터산업진흥원" },
+    { title: "SQLD (SQL 개발자)", date: "2026.03", issuer: "한국데이터산업진흥원" },
   ],
   expected: [
     { title: "AICE Associate", date: "2026.08 (예정)", issuer: "KT/한국경제" },
