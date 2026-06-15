@@ -87,8 +87,8 @@ const SKILLS: Skill[] = [
     tags: ["PyTorch", "TensorFlow", "Scikit-Learn", "CNN/GAN", "Vision"],
     items: [
       "의료용 컴퓨터 비전(CNN, Image Segmentation, GAN) 모델 개발 및 학습",
-      "복잡한 생체 시차 신호 필터링 및 질환 위험도 실시간 추론 추상화",
-      "임상 데이터의 특성을 수집 및 적응 연구하여 가벼운 경량 모델 구축"
+      "생체 신호의 노이즈를 제거하고 질환 위험도를 실시간으로 추론하는 파이프라인 구현",
+      "임상 환경에 맞게 경량 모델을 설계하고 반복 실험으로 성능 개선"
     ],
     icon: <Stethoscope className="w-5 h-5 text-emerald-500" />,
   },
@@ -98,14 +98,14 @@ const SKILLS: Skill[] = [
     tags: ["Pandas", "NumPy", "Matplotlib", "Seaborn", "Crawling", "ADsP"],
     items: [
       "건강검진 원천 빅데이터 로직 설계 및 타겟 도메인 Feature Engineering",
-      "정제되지 않은 의료 및 기초 바이오 자료의 유의한 결측처리 정합성 확보",
-      "예측 성능 고도화를 위한 변수 로그 분석 및 EDA 기반 지향 모델링"
+      "의료·바이오 원천 데이터의 결측값을 도메인 지식 기반으로 처리해 정합성 확보",
+      "예측 성능 개선을 위한 변수 분포 분석 및 EDA 기반 모델링"
     ],
     icon: <Database className="w-5 h-5 text-emerald-500" />,
   },
   {
     category: "MLOps & Cloud Infrastructure",
-    description: "서버 일관성을 지원하는 모델 생애주기 관리 및 컨테이너 가상화",
+    description: "환경에 상관없이 일관되게 돌아가도록 모델 라이프사이클 관리 및 컨테이너화",
     tags: ["Docker", "Linux CLI", "Model Serving", "GPU Server Setup"],
     items: [
       "Docker 컨테이너화를 통해 다양한 서버 로컬 환경 호환성 완벽 수립",
@@ -254,40 +254,40 @@ const CERTIFICATIONS = {
   ],
   expected: [
     { title: "AICE Associate", date: "2026.08 (예정)", issuer: "KT/한국경제" },
-    { title: "빅데이터분석기사", date: "필기 2026.09.05 · 실기 2026.11.28 (예정)", issuer: "한국데이터산업진흥원" },
+    { title: "빅데이터분석기사", date: "필기 2026.09 · 실기 2026.11 (예정)", issuer: "한국데이터산업진흥원" },
   ]
 };
 
 const PHILOSOPHIES: Philosophy[] = [
   {
     num: "01",
-    title: "다양한 프레임워크와 언어 간 연동 및 통합 능력",
+    title: "다양한 스택을 하나의 흐름으로 연결합니다",
     highlight: "Multi-Stack Synergy",
-    description: "AI 모델, 백엔드 서버, 데이터 파이프라인 등 서로 다른 기술 스택과 언어를 하나의 안정적이고 조화로운 흐름으로 연결하고 배포하는 종합적이고 입체적인 설계 감각을 지향합니다."
+    description: "AI 모델, 백엔드 API, 데이터 파이프라인이 따로 노는 프로젝트는 결국 어딘가에서 터집니다. 기술 스택이 달라도 전체 흐름 안에서 맞물리게 만드는 게 제가 가장 신경 쓰는 부분입니다."
   },
   {
     num: "02",
-    title: "명확한 컨텍스트 세팅으로 AI 출력을 제어하는 능력",
+    title: "AI 출력을 의도한 방향으로 제어합니다",
     highlight: "AI Alignment & Prompting",
-    description: "작업을 시작하기 전, 정확한 참고 문서와 엄격한 제약 조건을 미리 규합하고 설정하여 AI 에이전트의 출력을 정밀 교정합니다. 초반에 방향을 견고히 조정해 후반부 재작업 손실을 극소화합니다."
+    description: "프롬프트를 짜기 전에 참고 문서와 제약 조건부터 정리합니다. 처음에 방향을 잡아두면 나중에 처음부터 다시 하는 일이 훨씬 줄어들거든요."
   },
   {
     num: "03",
-    title: "요구사항·산출물 전반에서 예리하게 예외를 짚어내는 검토 능력",
-    highlight: "Meticulous Requirements Check",
-    description: "명시적인 규정이나 한계 조건이 세워지지 않은 모호한 프로젝트 흐름 속에서도 흐름상의 빈틈, 예외적인 에러, 누락된 입력값 명세를 미리 포착해내어 안정성을 크게 증대시킵니다."
+    title: "빈틈을 미리 짚어냅니다",
+    highlight: "Requirements Check",
+    description: "요구사항이 모호하거나 예외 처리가 빠진 부분을 그냥 넘기지 못하는 성격입니다. 나중에 터지는 것보다 미리 잡는 쪽이 낫다고 생각합니다."
   },
   {
     num: "04",
-    title: "구현 후 기능 동작을 끝까지 책임지고 문서화하는 꼼꼼함",
-    highlight: "Validation & Complete Manuals",
-    description: "컨트롤러와 데이터의 수동적인 송수신 성공에 머무르지 않고, 엔드투엔드로 실제 연동 모델과 프론트 UI의 상호작용이 완결성을 지녔는지 끝까지 검증합니다. 팀 전체가 오차 없는 context에서 교류하게 매뉴얼을 수립합니다."
+    title: "구현 이후에도 끝까지 확인합니다",
+    highlight: "Validation First",
+    description: "API가 응답을 돌려주는 것과 실제로 잘 작동하는 건 다릅니다. UI와의 실제 연동까지 직접 확인하고, 팀이 같은 맥락에서 일할 수 있도록 정리해두는 편입니다."
   },
   {
     num: "05",
-    title: "자기 주관을 논리적 근거와 함께 명확히 표현하는 능력",
+    title: "의견은 항상 근거와 함께 말합니다",
     highlight: "Logic-Based Collaboration",
-    description: "회의나 설계, 여러 기술적 대안 조율 과정에서 다차원적이고 합리적인 근거를 명료하게 서술해 협의를 견인합니다. 오해 비용을 축소하고 협업의 단계를 논리적으로 정돈합니다."
+    description: "'그냥 이게 나은 것 같아서'가 아니라 이유를 함께 제시합니다. 처음부터 명확히 해두는 게 결국 팀 전체에 더 빠른 길이라고 생각합니다."
   }
 ];
 
@@ -674,8 +674,8 @@ export default function App() {
             
             <div className="space-y-4 pt-12 border-t border-slate-200/50 dark:border-slate-800/50">
               <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-400 max-w-3xl leading-relaxed font-medium">
-                대학에서 배운 바이오 전공 지식을 바탕으로 데이터를 해석하며, <br />
-                분석부터 인프라 배포까지 완벽하게 소화해내는 AI 엔지니어 김민혁입니다.
+                바이오 전공에서 쌓은 도메인 지식을 바탕으로 데이터를 해석하고, <br />
+                분석부터 서버 배포까지 직접 챙기는 AI 엔지니어 김민혁입니다.
               </p>
               
               <div className="flex flex-wrap gap-3 pt-4">
@@ -724,14 +724,14 @@ export default function App() {
                 <div className="p-10 h-full bg-white/40 dark:bg-slate-900/40 backdrop-blur-xl rounded-[3rem] border border-white/20 dark:border-slate-800/30 shadow-2xl leading-relaxed text-slate-700 dark:text-slate-400 space-y-8 flex flex-col justify-center relative overflow-hidden">
                   <div className="absolute top-0 left-0 w-2 h-full bg-emerald-500/20" />
                   <p className="text-3xl text-slate-900 dark:text-slate-100 font-black font-serif italic leading-tight">
-                    "바이오 도메인 지식과 데이터 분석 능력을 결합하여, <br className="hidden md:block" /> 실질적인 비즈니스 문제를 해결합니다."
+                    "바이오 전공에서 쌓은 지식과 코드를 붙여서, <br className="hidden md:block" /> 실제로 돌아가는 걸 만들고 싶습니다."
                   </p>
                   <div className="space-y-4">
                     <p>
-                      University of California, Merced에서 분자생물학을 공부하며 바이오 분야의 기초 도메인 연구 논리와 지식을 탄탄히 다졌습니다. 이후 KOSTA 풀스택 개발자 과정을 통해 실제 데이터를 서버 환경에 유통하고 주도적으로 다룰 수 있는 엔지니어링 능력을 키웠습니다.
+                      University of California, Merced에서 분자생물학을 전공하며 생명과학 데이터를 과학적으로 다루는 시각을 길렀습니다. 이후 KOSTA 풀스택 과정에서 실제 데이터를 서버에 올려보며 엔지니어링 감각을 키웠고, 모범상을 받았습니다.
                     </p>
                     <p>
-                      현재는 AI 헬스케어 부트캠프에서 임상/생체 데이터를 과학적으로 이해하고 분석함과 동시에, 실제 연동 가능한 머신러닝/딥러닝 연구 모델들을 설계하며 업무 역량을 극대화하고 있습니다.
+                      지금은 AI 헬스케어 부트캠프에서 임상·생체 데이터를 분석하고, 실제 배포까지 이어지는 ML/DL 모델을 직접 만들고 있습니다.
                     </p>
                   </div>
                   <div className="pt-6 grid grid-cols-2 gap-8 border-t border-slate-200 dark:border-slate-800">
@@ -753,7 +753,7 @@ export default function App() {
         {/* Section: Philosophy */}
         <Reveal>
           <section id="philosophy" className="scroll-mt-24">
-            <SectionTitle icon={MessageSquare}>Core Work Strengths & Meta-Skills</SectionTitle>
+            <SectionTitle icon={MessageSquare}>Work Philosophy</SectionTitle>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
               {PHILOSOPHIES.map((p) => (
                 <div
@@ -947,8 +947,8 @@ export default function App() {
                     <span className="text-emerald-500 underline decoration-emerald-500/20 underline-offset-8 decoration-8 whitespace-nowrap">공백을 메우고</span> 싶습니다.
                   </h2>
                   <p className="text-slate-600 dark:text-emerald-100/60 max-w-xl mx-auto md:text-lg font-medium leading-relaxed">
-                    도메인 지식과 엔지니어링 역량을 결합하여 실질적인 문제를 풀어나가고자 합니다. <br />
-                    저의 가능성에 대해 더 자세히 알고 싶으시다면 언제든 연락 부탁드립니다.
+                    의료 데이터를 직접 다뤄본 경험과, 서버까지 배포해본 감각이 필요하시다면 — <br />
+                    채용 문의, 협업, 아니면 그냥 바이오 AI 얘기가 하고 싶으셔도 편하게 연락 주세요.
                   </p>
                </motion.div>
 
