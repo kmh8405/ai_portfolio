@@ -129,78 +129,6 @@ const SKILLS: Skill[] = [
 
 const PROJECTS: Project[] = [
   {
-    id: "smoking-analysis-1",
-    title: "흡연 여부 판별 모델 v1",
-    subtitle: "전국 건강검진 데이터 분석",
-    period: "2026.01",
-    description: "국가 건강검진 데이터를 활용하여 흡연 유무를 예측하는 분류 모델을 구축하고 주요 지표를 분석했습니다.",
-    strategy: "바이오 전공지식을 활용해 건강 지표들을 가공하고 유의미한 변수들을 발굴(Feature Engineering)하여 예측 성능을 개선했습니다.",
-    tags: ["Healthcare AI", "Classification", "EDA"],
-    eda: [
-        "헤모글로빈 농도 로그 변환",
-        "비만 집단별 흡연 영향도 분석"
-    ],
-    features: [
-        "Hemoglobin_Ratio (중요도 1위)",
-        "Metabolism_Index (대사 위험도)"
-    ],
-    githubUrl: "https://github.com/kmh8405/mini-project_smoking-analysis",
-    imageUrl: "https://picsum.photos/seed/healthcare-1/1200/600",
-    troubleshooting: {
-      issue: "전국 건강검진 원천 데이터의 극심한 결측치 및 이상값으로 전처리 정합성 문제 발생",
-      trial: "도메인 지식 기반 결측치 처리 기준 수립 및 IQR 방식 이상값 제거 후 재검증",
-      result: "유효 데이터 보존율 94% 확보 및 모델 예측 정확도 유의미한 향상"
-    }
-  },
-  {
-    id: "smoking-analysis-2",
-    title: "심혈관 질환 예측 서비스",
-    subtitle: "생체 시그널 실시간 모니터링",
-    period: "2025.12",
-    description: "생체 데이터를 수집하여 심혈관 질환 위험도를 실시간으로 추론하는 파이프라인입니다.",
-    strategy: "실시간 연동을 위해 생체 신호 데이터의 노이즈를 정제해내고, 분 단위 임베딩 기법을 연구하여 모델의 안정성을 제고했습니다.",
-    tags: ["MLOps", "Real-time AI", "Optimization"],
-    eda: [
-        "시계열 데이터의 노이즈 제거",
-        "특이값 탐지 알고리즘 적용"
-    ],
-    features: [
-        "HeartRate_Variability",
-        "Signal_Entropy_Score"
-    ],
-    githubUrl: "https://github.com/kmh8405",
-    imageUrl: "https://picsum.photos/seed/healthcare-2/1200/600",
-    troubleshooting: {
-      issue: "추론 서버의 잦은 메모리 누수 발생",
-      trial: "Docker 컨테이너 리소스 제한(Limit) 설정 및 배치 단위 추론 변경",
-      result: "메모리 점유율 40% 감소 및 서버 안정성 99.9% 확보"
-    }
-  },
-  {
-    id: "smoking-analysis-3",
-    title: "의료 영상 판독 보조 모델",
-    subtitle: "Chest X-ray 이상 징후 탐지",
-    period: "2025.10",
-    description: "흉부 X-ray 영상에서 주요 병변을 자동으로 감지하고 분할(Segmentation)하는 모델을 개발했습니다.",
-    strategy: "의료 데이터 특유의 심각한 클래스 불균형 문제를 해소하기 위해 타겟 이미지 어그멘테이션 기법을 정적/동적으로 적용했습니다.",
-    tags: ["Computer Vision", "GAN", "Medical Imaging"],
-    eda: [
-        "이미지 밝기/대조 정규화",
-        "클래스 불균형 해소 전략"
-    ],
-    features: [
-        "Bony_Suppression_Filter",
-        "Region_Attention_Map"
-    ],
-    githubUrl: "https://github.com/kmh8405",
-    imageUrl: "https://picsum.photos/seed/healthcare-3/1200/600",
-    troubleshooting: {
-      issue: "Segmentation 경계면 모호함으로 인한 낮은 IoU",
-      trial: "Fine-grained Attention 모듈 추가 및 Dice Loss 함수 가중치 조정",
-      result: "IoU 성능 15% 향상 및 임상의 피드백 긍정적 지표 확인"
-    }
-  },
-  {
     id: "prescription-guide-system",
     title: "진료 기록 기반 복약·생활 가이드 자동 생성 시스템",
     subtitle: "처방전 OCR → 약물 분석 → AI 가이드 생성",
@@ -222,6 +150,102 @@ const PROJECTS: Project[] = [
       issue: "OCR 인식 오류로 인한 약물명 파싱 실패 및 DB 매칭률 저하",
       trial: "GPT 프롬프트에 약물명 정규화 지침 추가 및 유사도 기반 퍼지 매칭 알고리즘 보완",
       result: "약물 DB 매칭률 73% → 91%로 향상, 미등록 약물 경고 UX 안정화"
+    }
+  },
+  {
+    id: "risk-predict-api",
+    title: "FastAPI 리스크 예측 API 서버",
+    subtitle: "JWT 인증 · 비동기 DB · OpenAI 연동",
+    period: "2026.04",
+    description: "JWT 인증 체계와 bcrypt 암호화를 갖춘 REST API 서버를 FastAPI로 구축했습니다. SQLAlchemy Async로 비동기 DB 처리를 구현하고, OpenAI API를 연동해 리스크 예측 결과에 대한 자연어 해설을 생성합니다.",
+    strategy: "모듈화 구조(router / service / repository 분리)로 코드 가독성과 확장성을 확보했습니다. 비동기 처리를 일관되게 적용해 다중 요청 환경에서의 응답 지연을 최소화했습니다.",
+    tags: ["FastAPI", "SQLAlchemy Async", "JWT", "OpenAI API"],
+    eda: [
+        "JWT Access/Refresh 토큰 만료 시나리오별 인증 흐름 검증",
+        "비동기 DB 세션 라이프사이클 분석 및 커넥션 풀 설정 최적화"
+    ],
+    features: [
+        "JWT(Access/Refresh) + bcrypt 인증·인가 시스템",
+        "SQLAlchemy Async 기반 비동기 DB 레이어 + OpenAI 리스크 해설 생성"
+    ],
+    githubUrl: "https://github.com/kmh8405/risk-predict-api",
+    imageUrl: "https://picsum.photos/seed/fastapi-1/1200/600",
+    troubleshooting: {
+      issue: "SQLAlchemy Async 세션에서 greenlet 런타임 오류 발생으로 DB 초기화 불가",
+      trial: "동기·비동기 혼재 구간 추적 후 AsyncSession 생성 위치를 라이프사이클 이벤트로 재설계",
+      result: "비동기 초기화 구조 통일로 오류 해소, 다중 요청 환경에서 안정적 응답 확인"
+    }
+  },
+  {
+    id: "calories-burn-prediction",
+    title: "운동 데이터 칼로리 소모량 예측",
+    subtitle: "Feature Engineering · Stacking Ensemble · SHAP",
+    period: "2026.03",
+    description: "운동 센서 데이터를 분석해 개인별 칼로리 소모량을 예측하는 회귀 모델을 구축했습니다. BMI·BMR·HR Ratio 등 도메인 기반 피처를 직접 설계하고, Optuna로 하이퍼파라미터를 최적화했습니다.",
+    strategy: "XGBoost, LightGBM, CatBoost를 개별 훈련한 뒤 Stacking Ensemble을 적용해 단일 모델 대비 예측 정확도를 높였습니다. SHAP 분석으로 모델 예측 근거를 시각화해 해석 가능성을 확보했습니다.",
+    tags: ["XGBoost", "LightGBM", "Stacking Ensemble", "SHAP", "Optuna"],
+    eda: [
+        "운동 강도·체성분·심박수별 칼로리 분포 분석 및 이상값 탐색",
+        "SHAP Summary Plot으로 피처 기여도 시각화 및 상위 변수 검증"
+    ],
+    features: [
+        "BMI / BMR / HR Ratio 도메인 기반 피처 설계",
+        "XGBoost + LightGBM + CatBoost Stacking + Optuna 튜닝"
+    ],
+    githubUrl: "https://github.com/kmh8405/calories-burn-prediction-ML",
+    imageUrl: "https://picsum.photos/seed/calories-1/1200/600",
+    troubleshooting: {
+      issue: "특정 운동 강도 구간에서 예측 오차가 집중 발생하는 구간별 편향 문제 확인",
+      trial: "SHAP 분석으로 구간별 피처 기여도 차이를 추적해 구간 특이 변수 식별",
+      result: "구간별 보정 전처리 적용 후 해당 구간 RMSE 28% 개선"
+    }
+  },
+  {
+    id: "smoking-analysis-1",
+    title: "건강검진 데이터 기반 흡연 요인 분석",
+    subtitle: "통계 검정 · 도메인 기반 Feature Engineering",
+    period: "2026.02",
+    description: "국가 건강검진 데이터를 활용하여 흡연 여부와 주요 건강 지표 간 관계를 분석하고, 통계 검정으로 유의미한 변수를 검증했습니다.",
+    strategy: "EDA로 도출한 인사이트를 기반으로 가설을 수립하고 t-test, chi-square, Spearman 검정을 수행했습니다. 바이오 전공 지식으로 헤모글로빈·중성지방 등 지표의 의미를 해석해 유의미한 피처를 설계했습니다.",
+    tags: ["Healthcare AI", "Statistical Testing", "EDA"],
+    eda: [
+        "헤모글로빈 농도 로그 변환 및 흡연 집단 간 t-test 검정",
+        "chi-square · Spearman으로 흡연-건강지표 유의성 검증"
+    ],
+    features: [
+        "Hemoglobin_Ratio — 흡연 집단 간 가장 유의미한 분리 변수",
+        "도메인 기반 이상치 제거 및 변수 특성별 전처리 전략 수립"
+    ],
+    githubUrl: "https://github.com/kmh8405/mini-project_smoking-analysis",
+    imageUrl: "https://picsum.photos/seed/healthcare-1/1200/600",
+    troubleshooting: {
+      issue: "전국 건강검진 원천 데이터의 극심한 결측치 및 이상값으로 전처리 정합성 문제 발생",
+      trial: "도메인 지식 기반 결측치 처리 기준 수립 및 IQR 방식 이상값 제거 후 재검증",
+      result: "유효 데이터 보존율 94% 확보 및 분석 결과 신뢰도 유의미하게 향상"
+    }
+  },
+  {
+    id: "march-madness-analysis",
+    title: "NCAA March Madness 데이터 분석",
+    subtitle: "웹 크롤링 · 통계 분석 · 시각화",
+    period: "2025.04",
+    description: "NCAA 토너먼트 역대 전적 데이터를 크롤링해 팀별 시즌 성적과 토너먼트 성과 간 상관관계를 분석했습니다. Matplotlib, Seaborn, Plotly를 활용해 인터랙티브 시각화를 구성했습니다.",
+    strategy: "HTML 테이블 구조를 Pandas로 직접 파싱하고, 멀티 레벨 인덱스 정제 후 집계·정렬·필터링 파이프라인을 구성했습니다. 크롤링 차단 우회와 데이터 정합성 검증을 병행했습니다.",
+    tags: ["Web Crawling", "Pandas", "Seaborn", "Plotly"],
+    eda: [
+        "시드 배정과 본선 진출 간 상관관계 분석",
+        "팀별 득점·실점 추이 및 이변 발생 패턴 탐색"
+    ],
+    features: [
+        "BeautifulSoup HTML 테이블 파싱 + Pandas 멀티인덱스 처리",
+        "Matplotlib / Seaborn / Plotly 복합 시각화 대시보드"
+    ],
+    githubUrl: "https://github.com/kmh8405/March_Madness",
+    imageUrl: "https://picsum.photos/seed/ncaa-1/1200/600",
+    troubleshooting: {
+      issue: "대상 사이트에서 봇 트래픽으로 감지돼 403 Forbidden 응답으로 크롤링 차단",
+      trial: "time.sleep()으로 요청 간격을 분산하고, requests-html에 무작위 User-Agent 헤더를 주입",
+      result: "차단 없이 전 시즌 데이터 수집 완료, 이후 분석 파이프라인 정상 동작"
     }
   }
 ];
