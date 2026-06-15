@@ -485,10 +485,11 @@ const ProjectCard = ({ project }: { project: Project }) => {
             <div className="space-y-3">
               <button
                 onClick={() => setShowTroubles(!showTroubles)}
-                className="w-full flex items-center justify-center gap-2 py-3 bg-slate-100 dark:bg-slate-800/50 text-slate-500 dark:text-slate-400 rounded-xl text-[10px] font-black uppercase tracking-widest hover:bg-emerald-50 dark:hover:bg-emerald-500/10 hover:text-emerald-600 transition-all border border-slate-200 dark:border-slate-700"
+                aria-expanded={showTroubles}
+                className="w-full flex items-center justify-center gap-2 py-3 bg-slate-100 dark:bg-slate-800/50 text-slate-500 dark:text-slate-400 rounded-xl text-[10px] font-black uppercase tracking-widest hover:bg-emerald-50 dark:hover:bg-emerald-500/10 hover:text-emerald-600 transition-all border border-slate-200 dark:border-slate-700 cursor-pointer"
               >
                 <Wrench className="w-3 h-3" />
-                {showTroubles ? "Hide Solving Log" : "🛠 Problem-Solving Log"}
+                {showTroubles ? "Hide Solving Log" : "Problem-Solving Log"}
               </button>
 
               <AnimatePresence>
@@ -631,8 +632,8 @@ export default function App() {
 
           <button
             onClick={() => setIsDarkMode(!isDarkMode)}
-            className="p-2.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:scale-110 transition-all shadow-sm active:scale-95"
-            aria-label="Toggle theme"
+            className="p-2.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:scale-110 transition-all shadow-sm active:scale-95 cursor-pointer"
+            aria-label={isDarkMode ? "라이트 모드로 전환" : "다크 모드로 전환"}
           >
             {isDarkMode ? <Sun className="w-5 h-5 text-yellow-500" /> : <Moon className="w-5 h-5" />}
           </button>
@@ -976,9 +977,10 @@ export default function App() {
               <div className="p-10 md:p-12 space-y-10 md:space-y-12">
                 <div className="flex justify-between items-center">
                   <h3 className="text-3xl font-black italic tracking-tighter text-slate-900 dark:text-white font-serif">Contact Info</h3>
-                  <button 
+                  <button
                     onClick={() => setIsContactModalOpen(false)}
-                    className="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors"
+                    aria-label="모달 닫기"
+                    className="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors cursor-pointer"
                   >
                     <X className="w-6 h-6 text-slate-400" />
                   </button>
