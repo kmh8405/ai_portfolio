@@ -268,7 +268,7 @@ const EDUCATION: Education[] = [
     title: "Molecular & Cell Biology 학사",
     period: "2017.08 - 2024.08",
     institution: "University of California, Merced",
-    description: "분자생물학 및 기초 통계를 체계적으로 이수하며, 복잡한 생명 과학 데이터를 과학적 논리로 접근하는 사고방식을 길렀습니다.",
+    description: "분자생물학 및 기초 통계를 이수하며, 실험 설계부터 데이터 수집·분석까지 직접 수행하는 방식으로 생명 과학을 접근했습니다. 이 과정에서 쌓인 도메인 지식이 현재 의료 AI 작업의 기반이 되고 있습니다.",
   }
 ];
 
