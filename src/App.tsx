@@ -262,7 +262,7 @@ const EDUCATION: Education[] = [
     title: "Javascript 기반 풀스택 양성 과정 (모범상 수상)",
     period: "2025.02 - 2025.07",
     institution: "KOSTA (한국소프트웨어산업협회)",
-    description: "백엔드 아키텍처와 웹 서버 지식을 습득하고 모범상을 수상했습니다. 과정 중 Node.js 스터디(주 1회, 5주)에 참여하며 팀원들과 학습 내용을 공유했습니다.",
+    description: "JavaScript 풀스택(Node.js · React · TypeScript)과 C# 백엔드를 함께 학습했습니다. 개인 프로젝트 8개, 팀 프로젝트 1개를 수행하며 모범상을 수상했고, Node.js 스터디(5주)를 병행했습니다.",
   },
   {
     title: "Molecular & Cell Biology 학사",
