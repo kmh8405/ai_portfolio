@@ -82,46 +82,46 @@ interface Philosophy {
 // --- Data ---
 const SKILLS: Skill[] = [
   {
-    category: "AI & Medical Modeling",
-    description: "생체 신호 및 의료 이미지 분석을 위한 특화 머신러닝/딥러닝 모델 설계",
-    tags: ["PyTorch", "TensorFlow", "Scikit-Learn", "CNN/GAN", "Vision"],
+    category: "AI & Machine Learning",
+    description: "생체 신호·의료 이미지 분석부터 Gradient Boosting 모델까지 폭넓은 ML/DL 구현 경험",
+    tags: ["PyTorch", "Scikit-Learn", "XGBoost", "LightGBM", "Optuna"],
     items: [
       "의료용 컴퓨터 비전(CNN, Image Segmentation, GAN) 모델 개발 및 학습",
-      "생체 신호의 노이즈를 제거하고 질환 위험도를 실시간으로 추론하는 파이프라인 구현",
-      "임상 환경에 맞게 경량 모델을 설계하고 반복 실험으로 성능 개선"
+      "XGBoost, LightGBM, CatBoost 기반 분류·회귀 모델 비교 및 Stacking 앙상블 구현",
+      "Optuna 하이퍼파라미터 튜닝과 반복 실험으로 모델 성능을 체계적으로 최적화"
     ],
     icon: <Stethoscope className="w-5 h-5 text-emerald-500" />,
   },
   {
     category: "Data Engineering & Analysis",
-    description: "바이오 정보 및 공공 헬스케어 데이터 가공과 효율적인 탐색(EDA)",
-    tags: ["Pandas", "NumPy", "Matplotlib", "Seaborn", "Crawling", "ADsP"],
+    description: "바이오 정보 및 공공 헬스케어 데이터 가공, EDA, 모델 해석까지 일관된 데이터 파이프라인 설계",
+    tags: ["Pandas", "NumPy", "Matplotlib", "Seaborn", "SHAP", "ADsP"],
     items: [
-      "건강검진 원천 빅데이터 로직 설계 및 타겟 도메인 Feature Engineering",
+      "건강검진 원천 빅데이터 로직 설계 및 도메인 기반 Feature Engineering",
       "의료·바이오 원천 데이터의 결측값을 도메인 지식 기반으로 처리해 정합성 확보",
-      "예측 성능 개선을 위한 변수 분포 분석 및 EDA 기반 모델링"
+      "SHAP을 활용한 모델 예측 해석 및 EDA 기반 변수 분포·오차 구간 분석"
     ],
     icon: <Database className="w-5 h-5 text-emerald-500" />,
   },
   {
     category: "MLOps & Cloud Infrastructure",
-    description: "환경에 상관없이 일관되게 돌아가도록 모델 라이프사이클 관리 및 컨테이너화",
-    tags: ["Docker", "Linux CLI", "Model Serving", "GPU Server Setup"],
+    description: "환경에 상관없이 일관되게 작동하도록 모델 라이프사이클 관리 및 컨테이너화",
+    tags: ["Docker", "Linux CLI", "Model Serving", "AWS EC2", "Nginx"],
     items: [
-      "Docker 컨테이너화를 통해 다양한 서버 로컬 환경 호환성 완벽 수립",
-      "추론 지연(Latency) 단축을 고려한 모델 가중치 및 분 단위 배치 가공 경량화",
-      "프로덕션 서버 호스팅 및 모델 자원 사용량 최적화와 모니터링 수립"
+      "Docker 컨테이너화를 통해 다양한 서버·로컬 환경의 호환성 확보",
+      "추론 지연(Latency) 단축을 고려한 모델 가중치 및 배치 단위 경량화",
+      "AWS EC2 + Nginx 리버스 프록시 기반 HTTPS 도메인 배포 및 모니터링 구성"
     ],
     icon: <Cpu className="w-5 h-5 text-emerald-500" />,
   },
   {
     category: "Full-stack Web Serving",
-    description: "학습된 모델 서빙 고성능 API 엔드포인트 설계 및 웹 서비스 배포",
-    tags: ["FastAPI", "C# / .NET", "Node.js", "React SPA", "SQL / DBMS", "SQLD"],
+    description: "학습된 모델을 실제 서비스로 연결하는 API 설계부터 프론트엔드 배포까지",
+    tags: ["FastAPI", "Node.js", "React SPA", "SQLAlchemy", "JWT", "SQLD"],
     items: [
-      "FastAPI와 Node.js 백엔드 프레임워크를 활용한 고성능 연동 포트 폴링 구축",
-      "KOSTA 정규 풀스택 수료 기반의 SPA 프론트엔드 반응형 개발 협업 배포",
-      "데이터 수집 및 적재 효율을 최적화하기 위한 정규 DBMS 설계와 SQL 튜닝"
+      "FastAPI 기반 REST API 서버 설계 및 JWT 인증·인가 로직 구현",
+      "SQLAlchemy Async를 활용한 비동기 DB 처리 구조 설계 및 Node.js·React 풀스택 개발",
+      "데이터 수집 및 적재 효율을 최적화하기 위한 DBMS 설계와 SQL 튜닝"
     ],
     icon: <Globe className="w-5 h-5 text-emerald-500" />,
   },
