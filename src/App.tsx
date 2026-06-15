@@ -147,9 +147,9 @@ const PROJECTS: Project[] = [
     githubUrl: "https://github.com/kmh8405/mini-project_smoking-analysis",
     imageUrl: "https://picsum.photos/seed/healthcare-1/1200/600",
     troubleshooting: {
-      issue: "NCAA 크롤링 중 403 Forbidden 에러 발생",
-      trial: "time.sleep() 부여 및 User-Agent 무작위 변경",
-      result: "차단 없이 10,000건 데이터 수집 성공 (수집 효율 200% 향상)"
+      issue: "전국 건강검진 원천 데이터의 극심한 결측치 및 이상값으로 전처리 정합성 문제 발생",
+      trial: "도메인 지식 기반 결측치 처리 기준 수립 및 IQR 방식 이상값 제거 후 재검증",
+      result: "유효 데이터 보존율 94% 확보 및 모델 예측 정확도 유의미한 향상"
     }
   },
   {
@@ -463,7 +463,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 gap-8 pt-4 border-t border-slate-200/50 dark:border-slate-800/50">
+        <div className="grid grid-cols-2 gap-6 pt-4 border-t border-slate-200/50 dark:border-slate-800/50">
           <div className="space-y-4">
              <h4 className="flex items-center gap-2 font-black text-slate-900 dark:text-white uppercase tracking-widest text-[10px]">
                <Database className="w-3 h-3 text-emerald-500" /> EDA & Analytics
@@ -472,6 +472,19 @@ const ProjectCard = ({ project }: { project: Project }) => {
                {project.eda.map((item, i) => (
                  <li key={i} className="flex gap-3 text-xs text-slate-600 dark:text-slate-400 font-bold items-start leading-tight">
                     <Check className="w-3 h-3 text-emerald-500 mt-0.5 shrink-0" />
+                    {item}
+                 </li>
+               ))}
+             </ul>
+          </div>
+          <div className="space-y-4">
+             <h4 className="flex items-center gap-2 font-black text-slate-900 dark:text-white uppercase tracking-widest text-[10px]">
+               <Code2 className="w-3 h-3 text-emerald-500" /> Key Features
+             </h4>
+             <ul className="space-y-3">
+               {project.features.map((item, i) => (
+                 <li key={i} className="flex gap-3 text-xs text-slate-600 dark:text-slate-400 font-bold items-start leading-tight">
+                    <ChevronRight className="w-3 h-3 text-emerald-500 mt-0.5 shrink-0" />
                     {item}
                  </li>
                ))}
