@@ -269,7 +269,7 @@ const PHILOSOPHIES: Philosophy[] = [
     num: "02",
     title: "AI 출력을 의도한 방향으로 제어합니다",
     highlight: "AI Alignment & Prompting",
-    description: "프롬프트를 작성하기 전, 참고 문서와 제약 조건을 먼저 명확히 정리합니다. 초반에 방향을 잡아두면 후반부의 불필요한 재작업을 크게 줄일 수 있습니다."
+    description: "프롬프트를 작성하기 전, 참고 문서와 제약 조건을 먼저 명확히 정리합니다. 초반에 방향을 잡아두면 후반부의 불필요한 재작업을 크게 줄일 수 있습니다. AI 바이브코딩 방법론을 꾸준히 학습하며 AI 도구를 더 효율적으로 활용하는 방법을 연구하고 있습니다."
   },
   {
     num: "03",
@@ -281,13 +281,19 @@ const PHILOSOPHIES: Philosophy[] = [
     num: "04",
     title: "구현 이후에도 끝까지 확인합니다",
     highlight: "Validation First",
-    description: "API가 응답을 반환하는 것과 실제로 올바르게 작동하는 것은 다릅니다. UI와의 연동까지 직접 검증하고, 팀 전체가 동일한 맥락에서 작업할 수 있도록 문서화합니다."
+    description: "API가 응답을 반환하는 것과 실제로 올바르게 작동하는 것은 다릅니다. UI와의 연동까지 직접 검증하고, 테스트 가이드를 직접 작성해 팀 전체가 동일한 맥락에서 검증할 수 있도록 문서화합니다."
   },
   {
     num: "05",
     title: "의견은 항상 근거와 함께 제시합니다",
     highlight: "Logic-Based Collaboration",
     description: "기술적 판단을 내릴 때는 항상 이유를 함께 제시합니다. 모호한 의견 교환보다 명확한 논거가 팀 전체의 속도를 높인다고 생각합니다."
+  },
+  {
+    num: "06",
+    title: "모르면 끝까지 파고듭니다",
+    highlight: "Deep-Dive Learning",
+    description: "모르는 개념이나 동작 원리가 생기면 그냥 넘어가지 않습니다. 끝까지 질문하고 직접 실험하며 정확하게 이해하는 습관을 유지합니다. 데이스쿨·Node.js 스터디 등 자기 주도 학습 루틴을 꾸준히 병행하고 있습니다."
   }
 ];
 
