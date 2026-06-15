@@ -171,7 +171,7 @@ const PROJECTS: Project[] = [
     githubUrl: "https://github.com/kmh8405",
     imageUrl: "https://picsum.photos/seed/healthcare-2/1200/600",
     troubleshooting: {
-      issue: "推론 서버의 잦은 메모리 누수 발생",
+      issue: "추론 서버의 잦은 메모리 누수 발생",
       trial: "Docker 컨테이너 리소스 제한(Limit) 설정 및 배치 단위 추론 변경",
       result: "메모리 점유율 40% 감소 및 서버 안정성 99.9% 확보"
     }
@@ -201,27 +201,27 @@ const PROJECTS: Project[] = [
     }
   },
   {
-    id: "bio-informatics-workbench",
-    title: "바이오 정보 분석 통합 워크벤치 (임시 내용)",
-    subtitle: "임상 데이터 분석 및 웹 배포 연구",
-    period: "2026.04",
-    description: "Vercel과 AWS EC2(Nginx 리버스 프록시 및 HTTPS 보안 적용)를 활용하여 웹 클라이언트 전산과 데이터 분석용 서빙단을 연계한 연구용 임시 대시보드 플랫폼입니다.",
-    strategy: "AWS EC2 환경에 대한 탄력적 IP 부여, Nginx 리버스 프록시 설정을 통한 HTTPS 도메인 배포 흐름을 완전해 파악하고 작동 구조를 실습했습니다. 쉘스크립트 템플릿의 실행 흐름을 분석하여 배포 파이프라인의 핵심 구조를 확인했습니다.",
-    tags: ["Web Deployment", "AWS EC2", "Data Dashboards"],
+    id: "prescription-guide-system",
+    title: "진료 기록 기반 복약·생활 가이드 자동 생성 시스템",
+    subtitle: "처방전 OCR → 약물 분석 → AI 가이드 생성",
+    period: "2026.04 - 진행중",
+    description: "처방전·약봉투 파일을 업로드하면 Clova OCR로 텍스트를 추출하고, GPT로 약물 목록과 질병 코드를 파싱해 내부 약물 DB와 매칭합니다. DB에 없는 약물은 경고 표시로 사용자에게 확인을 유도하며, 가이드 생성 버튼 클릭 시 복약·운동·식사·생활 습관 가이드를 자동으로 생성합니다.",
+    strategy: "Clova OCR → GPT 파싱 → 약물 DB 매칭으로 이어지는 처리 파이프라인을 설계하고, 사용자의 건강 정보와 약물 데이터를 조합한 개인화 가이드 생성 로직과 후속 질문을 위한 RAG 기반 챗봇을 구현했습니다.",
+    tags: ["RAG Pipeline", "Clova OCR", "LLM Serving"],
     eda: [
-        "대용량 바이오 정보 CSV 가공",
-        "서버 리퀘스트 응답 지연 추적"
+        "처방전·약봉투 OCR 추출 정확도 분석 및 파싱 실패 케이스 분류",
+        "약물 DB 매칭률 검증 및 미등록 약물 패턴 탐색"
     ],
     features: [
-        "Client Vercel 배포 세팅",
-        "Nginx HTTPS SSL 보안 및 도메인 바인딩"
+        "Clova OCR + GPT 파이프라인 (약물명·질병코드 자동 추출)",
+        "DB 미매칭 약물 경고 알림 + 개인화 복약 가이드 생성"
     ],
     githubUrl: "https://github.com/kmh8405",
     imageUrl: "https://picsum.photos/seed/healthcare-4/1200/600",
     troubleshooting: {
-      issue: "웹 클라이언트와 EC2 서버 연동 시 CORS 오류 및 파일 업로드 제한 문제",
-      trial: "Nginx reverse proxy 헤더 튜닝 및 client_max_body_size 파라미터 최적화 조율",
-      result: "AWS와 Vercel 간에 외부 요청 보안 헤더 및 대용량 파일 전송 체계 안정화"
+      issue: "OCR 인식 오류로 인한 약물명 파싱 실패 및 DB 매칭률 저하",
+      trial: "GPT 프롬프트에 약물명 정규화 지침 추가 및 유사도 기반 퍼지 매칭 알고리즘 보완",
+      result: "약물 DB 매칭률 73% → 91%로 향상, 미등록 약물 경고 UX 안정화"
     }
   }
 ];
@@ -253,7 +253,8 @@ const CERTIFICATIONS = {
     { title: "SQLD (SQL 개발자)", date: "2023.09", issuer: "한국데이터산업진흥원" },
   ],
   expected: [
-    { title: "AICE Associate", date: "2024.06 (예정)", issuer: "KT/한국경제" }
+    { title: "AICE Associate", date: "2026.08 (예정)", issuer: "KT/한국경제" },
+    { title: "빅데이터분석기사", date: "필기 2026.09.05 · 실기 2026.11.28 (예정)", issuer: "한국데이터산업진흥원" },
   ]
 };
 
@@ -684,9 +685,8 @@ export default function App() {
                   <div className="absolute inset-0 bg-emerald-500 rounded-[3rem] blur-2xl opacity-20 group-hover:opacity-30 transition-opacity"></div>
                   <div className="w-full h-full bg-slate-200 dark:bg-slate-800 rounded-[3rem] overflow-hidden border-2 border-slate-200 dark:border-slate-800 shadow-2xl relative z-10">
                     <img 
-                      src="https://picsum.photos/seed/profile/800/1000" 
-                      alt="Profile" 
-                      referrerPolicy="no-referrer"
+                      src="/profile.jpg"
+                      alt="Profile"
                       className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
@@ -1038,7 +1038,7 @@ export default function App() {
       <footer className="border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 py-12 px-6">
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-widest">
-            © 2024 Min-Hyuk Kim • AI Healthcare Solutions
+            © 2026 Min-Hyuk Kim • AI Healthcare Solutions
           </div>
           <div className="flex gap-4">
              <a href="https://github.com/kmh8405" className="text-slate-400 hover:text-emerald-500 transition-colors">
